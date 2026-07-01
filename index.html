@@ -4,6 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   <title>Product List · Yuanhang</title>
+
+  <!-- ===== Meta Pixel Code ===== -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1717445532785259');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1717445532785259&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- ===== End Meta Pixel Code ===== -->
+
   <style>
     /* ===== Reset & Font ===== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -81,6 +100,7 @@
       color: #ffffff;
       text-decoration: none;
       transition: 0.2s;
+      cursor: pointer;
     }
     .contact-banner .links a:active { transform: scale(0.95); }
     .contact-banner .links .wa { background: #25D366; }
@@ -186,7 +206,11 @@
       border-top: 1px solid rgba(255, 255, 255, 0.04);
       padding-top: 20px;
     }
-    .footer-note a { color: #d4a853; text-decoration: none; }
+    .footer-note a {
+      color: #d4a853;
+      text-decoration: none;
+      cursor: pointer;
+    }
 
     /* ===== Floating Buttons ===== */
     .floating-buttons {
@@ -213,6 +237,7 @@
       border: none;
       -webkit-tap-highlight-color: transparent;
       animation: floatGlow 2.5s ease-in-out infinite;
+      cursor: pointer;
     }
     .float-btn:nth-child(2) { animation-delay: 0.3s; }
     .float-btn:active { transform: scale(0.92); }
@@ -261,8 +286,8 @@
   <div class="contact-banner">
     <span class="label">📞 Contact Us</span>
     <div class="links">
-      <a href="https://wa.me/447754979958" class="wa" target="_blank">💬 WhatsApp</a>
-      <a href="https://t.me/adasda156" class="tg" target="_blank">✈️ Telegram</a>
+      <a href="https://wa.me/886982200282" class="wa" target="_blank" onclick="fbq('track', 'Lead');">💬 WhatsApp</a>
+      <a href="https://t.me/adasda156" class="tg" target="_blank" onclick="fbq('track', 'Lead');">✈️ Telegram</a>
     </div>
   </div>
 
@@ -283,13 +308,13 @@
 
   <!-- ===== Footer ===== -->
   <div class="footer-note">
-    Order via <a href="https://t.me/adasda156" target="_blank">Telegram</a> or <a href="https://wa.me/447754979958" target="_blank">WhatsApp</a>
+    Order via <a href="https://t.me/adasda156" target="_blank" onclick="fbq('track', 'Lead');">Telegram</a> or <a href="https://wa.me/886982200282" target="_blank" onclick="fbq('track', 'Lead');">WhatsApp</a>
   </div>
 
   <!-- ===== Floating Buttons ===== -->
   <div class="floating-buttons">
-    <a href="https://wa.me/447754979958" class="float-btn wa" target="_blank" aria-label="WhatsApp">💬</a>
-    <a href="https://t.me/adasda156" class="float-btn tg" target="_blank" aria-label="Telegram">✈️</a>
+    <a href="https://wa.me/886982200282" class="float-btn wa" target="_blank" aria-label="WhatsApp" onclick="fbq('track', 'Lead');">💬</a>
+    <a href="https://t.me/adasda156" class="float-btn tg" target="_blank" aria-label="Telegram" onclick="fbq('track', 'Lead');">✈️</a>
   </div>
 
   <script>
