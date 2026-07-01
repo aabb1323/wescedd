@@ -1,221 +1,521 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us on WhatsApp</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-        }
-        .container {
-            text-align: center;
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            max-width: 420px;
-            width: 90%;
-        }
-        .whatsapp-icon {
-            font-size: 80px;
-            margin-bottom: 20px;
-            display: block;
-        }
-        h1 {
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 28px;
-        }
-        .subtitle {
-            color: #666;
-            margin-bottom: 8px;
-            font-size: 16px;
-        }
-        p {
-            color: #666;
-            margin-bottom: 30px;
-            line-height: 1.6;
-            font-size: 15px;
-        }
-        .btn-whatsapp {
-            display: inline-block;
-            background: #25D366;
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            max-width: 280px;
-        }
-        .btn-whatsapp:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-            background: #20b858;
-        }
-        .btn-whatsapp:active {
-            transform: translateY(0);
-        }
-        .auto-redirect {
-            margin-top: 20px;
-            color: #999;
-            font-size: 14px;
-        }
-        .countdown {
-            color: #25D366;
-            font-weight: bold;
-            font-size: 20px;
-        }
-        .status-message {
-            margin-top: 15px;
-            padding: 10px;
-            border-radius: 8px;
-            font-size: 14px;
-            display: none;
-        }
-        .status-message.show {
-            display: block;
-        }
-        .status-message.info {
-            background: #e3f2fd;
-            color: #1976d2;
-        }
-        .status-message.warning {
-            background: #fff3e0;
-            color: #f57c00;
-        }
-        .skip-link {
-            display: inline-block;
-            margin-top: 12px;
-            color: #667eea;
-            font-size: 13px;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .skip-link:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Product Price List · Yuanhang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* ===== Reset & Font ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, system-ui, sans-serif;
+      background: #0a0a0f;
+      color: #e5e7eb;
+      padding: 16px 12px 120px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    ::selection { background: #d4a853; color: #0a0a0f; }
+
+    /* ===== Header ===== */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(212, 168, 83, 0.15);
+    }
+    .page-header h1 {
+      font-size: 24px;
+      font-weight: 300;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+    }
+    .page-header h1 strong {
+      color: #d4a853;
+      font-weight: 600;
+    }
+    .back-link {
+      color: #9ca3af;
+      font-size: 13px;
+      text-decoration: none;
+      border: 1px solid rgba(212, 168, 83, 0.15);
+      padding: 6px 16px;
+      border-radius: 40px;
+      transition: 0.3s;
+    }
+    .back-link:hover { color: #d4a853; border-color: #d4a853; }
+
+    /* ===== Banner ===== */
+    .info-banner {
+      background: rgba(212, 168, 83, 0.06);
+      border: 1px solid rgba(212, 168, 83, 0.15);
+      border-radius: 40px;
+      padding: 10px 16px;
+      text-align: center;
+      margin-bottom: 24px;
+      color: #d4a853;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.3px;
+    }
+    .info-banner i { margin-right: 8px; }
+
+    /* ===== Contact Banner ===== */
+    .contact-banner {
+      background: linear-gradient(135deg, rgba(212, 168, 83, 0.08), rgba(212, 168, 83, 0.02));
+      border: 1px solid #d4a853;
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin-bottom: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      box-shadow: 0 0 25px rgba(212, 168, 83, 0.03);
+    }
+    .contact-banner .label {
+      font-size: 15px;
+      font-weight: 500;
+      color: #e5e7eb;
+    }
+    .contact-banner .label i {
+      color: #d4a853;
+      margin-right: 8px;
+    }
+    .contact-banner .links {
+      display: flex;
+      gap: 12px;
+    }
+    .contact-banner .links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 40px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #ffffff;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .contact-banner .links a:active {
+      transform: scale(0.95);
+    }
+    .contact-banner .links .wa {
+      background: #25D366;
+    }
+    .contact-banner .links .tg {
+      background: #0088cc;
+    }
+
+    /* ===== Search Box ===== */
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 40px;
+      padding: 12px 18px;
+      margin-bottom: 28px;
+      transition: 0.3s;
+    }
+    .search-box:focus-within {
+      border-color: #d4a853;
+      box-shadow: 0 0 20px rgba(212, 168, 83, 0.04);
+    }
+    .search-box i {
+      color: #6b7280;
+      font-size: 16px;
+    }
+    .search-box input {
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      font-size: 16px;
+      width: 100%;
+      outline: none;
+      font-family: inherit;
+    }
+    .search-box input::placeholder { color: #6b7280; font-weight: 300; }
+
+    /* ===== Product Grid ===== */
+    .product-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .product-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 16px;
+      padding: 16px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: 0.2s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .product-card:active {
+      background: rgba(212, 168, 83, 0.04);
+      transform: scale(0.99);
+    }
+
+    .product-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+      min-width: 0;
+    }
+    .product-sku {
+      font-size: 12px;
+      font-weight: 600;
+      color: #d4a853;
+      letter-spacing: 0.5px;
+    }
+    .product-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 1.3;
+      word-break: break-word;
+    }
+    .product-spec {
+      font-size: 13px;
+      color: #9ca3af;
+      font-weight: 400;
+    }
+
+    .product-price {
+      text-align: right;
+      flex-shrink: 0;
+      margin-left: 12px;
+    }
+    .product-price .amount {
+      font-size: 18px;
+      font-weight: 700;
+      color: #d4a853;
+      white-space: nowrap;
+    }
+
+    /* ===== No Results ===== */
+    .no-results {
+      display: none;
+      text-align: center;
+      padding: 60px 20px;
+      color: #6b7280;
+    }
+    .no-results i { font-size: 36px; margin-bottom: 12px; opacity: 0.5; }
+
+    /* ===== Footer ===== */
+    .footer-note {
+      margin-top: 30px;
+      text-align: center;
+      color: #6b7280;
+      font-size: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
+      padding-top: 20px;
+    }
+    .footer-note a {
+      color: #d4a853;
+      text-decoration: none;
+    }
+
+    /* ===== Floating Buttons ===== */
+    .floating-buttons {
+      position: fixed;
+      bottom: 24px;
+      right: 20px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .float-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 28px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+      transition: all 0.2s ease;
+      border: none;
+      -webkit-tap-highlight-color: transparent;
+      animation: floatGlow 2.5s ease-in-out infinite;
+    }
+    .float-btn:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+    .float-btn:active {
+      transform: scale(0.92);
+    }
+    .float-btn.wa { background: #25D366; }
+    .float-btn.tg { background: #0088cc; }
+
+    @keyframes floatGlow {
+      0% { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); }
+      50% { box-shadow: 0 0 30px rgba(212, 168, 83, 0.2); }
+      100% { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); }
+    }
+
+    /* ===== Desktop ===== */
+    @media (hover: hover) {
+      .float-btn:hover { transform: scale(1.06); }
+      .product-card:hover { background: rgba(255, 255, 255, 0.04); border-color: rgba(212, 168, 83, 0.1); }
+      .contact-banner .links a:hover { transform: scale(1.02); }
+    }
+
+    @media (min-width: 640px) {
+      body { padding: 30px 24px 140px; max-width: 800px; margin: 0 auto; }
+      .page-header h1 { font-size: 32px; }
+      .product-card { padding: 20px 24px; border-radius: 20px; }
+      .product-name { font-size: 18px; }
+      .product-price .amount { font-size: 20px; }
+      .floating-buttons { bottom: 40px; right: 30px; }
+      .float-btn { width: 68px; height: 68px; font-size: 30px; }
+      .contact-banner { padding: 18px 24px; }
+    }
+    @media (min-width: 1024px) {
+      body { padding: 40px 32px 160px; max-width: 960px; }
+      .product-grid { gap: 16px; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <span class="whatsapp-icon">💬</span>
-        <h1>Contact Us</h1>
-        <p class="subtitle">We're here to help!</p>
-        <p>Click the button below to start a conversation with us on WhatsApp</p>
-        
-        <button class="btn-whatsapp" id="whatsappBtn">
-            📱 Open WhatsApp
-        </button>
-        
-        <div class="auto-redirect">
-            Redirecting in <span class="countdown" id="countdown">5</span> seconds...
-        </div>
-        
-        <a href="#" class="skip-link" id="skipLink">Skip wait & redirect now →</a>
-        
-        <div class="status-message" id="statusMessage"></div>
-    </div>
 
-    <script>
-        // WhatsApp configuration
-        const WHATSAPP_URL = 'https://wa.me/886982200282';
+  <!-- ===== Header ===== -->
+  <div class="page-header">
+    <h1>📋 Product <strong>Price List</strong></h1>
+    <a href="/" class="back-link"><i class="fas fa-arrow-left"></i> Back</a>
+  </div>
+
+  <!-- ===== Banner: Factory Direct ===== -->
+  <div class="info-banner">
+    <i class="fas fa-store"></i> Factory Direct · Best Price
+  </div>
+
+  <!-- ===== Contact Banner ===== -->
+  <div class="contact-banner">
+    <span class="label"><i class="fas fa-headset"></i> Contact Us</span>
+    <div class="links">
+      <a href="https://wa.me/886982200282" class="wa" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="https://t.me/adasda156" class="tg" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
+    </div>
+  </div>
+
+  <!-- ===== Search ===== -->
+  <div class="search-box">
+    <i class="fas fa-search"></i>
+    <input type="text" id="searchInput" placeholder="Search SKU or product name..." autocomplete="off">
+  </div>
+
+  <!-- ===== Product List ===== -->
+  <div id="productContainer" class="product-grid"></div>
+
+  <!-- ===== No Results ===== -->
+  <div class="no-results" id="noResults">
+    <i class="fas fa-search"></i>
+    <p>No matching products found</p>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <div class="footer-note">
+    Order via <a href="https://t.me/adasda156" target="_blank">Telegram</a> or <a href="https://wa.me/886982200282" target="_blank">WhatsApp</a>
+  </div>
+
+  <!-- ===== Floating Buttons ===== -->
+  <div class="floating-buttons">
+    <a href="https://wa.me/886982200282" class="float-btn wa" target="_blank" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://t.me/adasda156" class="float-btn tg" target="_blank" aria-label="Telegram">
+      <i class="fab fa-telegram"></i>
+    </a>
+  </div>
+
+  <script>
+    // ============================================================
+    // Product Data (All prices are already discounted by 55%)
+    // ============================================================
+    const products = [
+      // ---- Left Section ----
+      { sku: "TR5", name: "Tirzepatide", spec: "5mg*10vials", price: 49 },
+      { sku: "TR10", name: "Tirzepatide", spec: "10mg*10vials", price: 67 },
+      { sku: "TR15", name: "Tirzepatide", spec: "15mg*10vials", price: 83 },
+      { sku: "TR20", name: "Tirzepatide", spec: "20mg*10vials", price: 110 },
+      { sku: "TR30", name: "Tirzepatide", spec: "30mg*10vials", price: 155 },
+      { sku: "TR60", name: "Tirzepatide", spec: "60mg*10vials", price: 232 },
+      { sku: "SM5", name: "Semaglutide", spec: "5mg*10vials", price: 42 },
+      { sku: "SM10", name: "Semaglutide", spec: "10mg*10vials", price: 60 },
+      { sku: "SM15", name: "Semaglutide", spec: "15mg*10vials", price: 81 },
+      { sku: "SM20", name: "Semaglutide", spec: "20mg*10vials", price: 90 },
+      { sku: "RT5", name: "Retatrutide", spec: "5mg*10vials", price: 91 },
+      { sku: "RT10", name: "Retatrutide", spec: "10mg*10vials", price: 130 },
+      { sku: "RT15", name: "Retatrutide", spec: "15mg*10vials", price: 160 },
+      { sku: "RT20", name: "Retatrutide", spec: "20mg*10vials", price: 207 },
+      { sku: "RT30", name: "Retatrutide", spec: "30mg*10vials", price: 270 },
+      { sku: "RT50", name: "Retatrutide", spec: "50mg*10vials", price: 410 },
+      { sku: "RT60", name: "Retatrutide", spec: "60mg*10vials", price: 529 },
+      { sku: "CGL5", name: "Cagrilintide", spec: "5mg*10vials", price: 117 },
+      { sku: "CGL10", name: "Cagrilintide", spec: "10mg*10vials", price: 227 },
+      { sku: "Klow", name: "Klow (TB+BPC+GHK+KPV)", spec: "80mg*10vials", price: 240 },
+      { sku: "LC216", name: "Lipo-c", spec: "10mg*10vials", price: 80 },
+      { sku: "BBG70", name: "Glow (TB+BPC+GHK)", spec: "70mg*10vials", price: 227 },
+      { sku: "BT5", name: "TB500 (Thymosin B4)", spec: "5mg*10vials", price: 89 },
+      { sku: "BT10", name: "TB500 (Thymosin B4)", spec: "10mg*10vials", price: 168 },
+      { sku: "BC5", name: "BPC-157", spec: "5mg*10vials", price: 48 },
+      { sku: "BC10", name: "BPC-157", spec: "10mg*10vials", price: 70 },
+      { sku: "BB10", name: "BPC 5mg + TB 5mg", spec: "10mg*10vials", price: 117 },
+      { sku: "BB20", name: "BPC 10mg + TB 10mg", spec: "20mg*10vials", price: 196 },
+      { sku: "NJ100", name: "NAD+", spec: "100mg*10vials", price: 45 },
+      { sku: "NJ500", name: "NAD+", spec: "500mg*10vials", price: 90 },
+      { sku: "NJ1000", name: "NAD+", spec: "1000mg*10vials", price: 169 },
+      { sku: "P41", name: "PT-141", spec: "10mg*10vials", price: 65 },
+      { sku: "B12", name: "Vitamin B12", spec: "10mg*10vials", price: 88 },
+      { sku: "CBL60", name: "Cerebrolysin", spec: "60mg*10vials", price: 169 },
+      { sku: "5AD", name: "AOD9604", spec: "5mg*10vials", price: 101 },
+      { sku: "10AD", name: "AOD9604", spec: "10mg*10vials", price: 185 },
+      { sku: "CU", name: "GHK-CU", spec: "50mg*10vials", price: 33 },
+      { sku: "CU100", name: "GHK-CU", spec: "100mg*10vials", price: 59 },
+      { sku: "MS10", name: "MOTS-C", spec: "10mg*10vials", price: 68 },
+      { sku: "MS40", name: "MOTS-C", spec: "40mg*10vials", price: 225 },
+      { sku: "H10", name: "HGH", spec: "10iu*10vials", price: 49 },
+      { sku: "H15", name: "HGH", spec: "15iu*10vials", price: 73 },
+      { sku: "H24", name: "HGH", spec: "24iu*10vials", price: 118 },
+      { sku: "G5K", name: "HCG", spec: "500iu*10vials", price: 88 },
+      { sku: "G10K", name: "HCG", spec: "1000iu*10vials", price: 156 },
+      { sku: "2S10", name: "SS-31", spec: "10mg*10vials", price: 105 },
+      { sku: "2S50", name: "SS-31", spec: "50mg*10vials", price: 410 },
+      { sku: "CND2", name: "CJC-1295 no DAC", spec: "2mg*10vials", price: 41 },
+      { sku: "CND5", name: "CJC-1295 no DAC", spec: "5mg*10vials", price: 95 },
+      { sku: "CND10", name: "CJC-1295 no DAC", spec: "10mg*10vials", price: 185 },
+      { sku: "CD2", name: "CJC-1295 with DAC", spec: "2mg*10vials", price: 72 },
+      { sku: "CD5", name: "CJC-1295 with DAC", spec: "5mg*10vials", price: 172 },
+      { sku: "FM2", name: "MGF", spec: "2mg*10vials", price: 62 },
+      { sku: "FMP2", name: "PEG-MGF", spec: "2mg*10vials", price: 90 },
+
+      // ---- Right Section ----
+      { sku: "CP10", name: "CJC-1295(noDAC)+IPA", spec: "10mg*10vials", price: 115 },
+      { sku: "MT1", name: "Melanotan I", spec: "10mg*10vials", price: 62 },
+      { sku: "ML10", name: "Melanotan II", spec: "10mg*10vials", price: 62 },
+      { sku: "MTN10", name: "Melatonin", spec: "10mg*10vials", price: 180 },
+      { sku: "KP10", name: "KPV", spec: "10mg*10vials", price: 69 },
+      { sku: "WA3", name: "Bac Water", spec: "3ml*10vials", price: 10 },
+      { sku: "WA10", name: "Bac Water", spec: "10ml*10vials", price: 11 },
+      { sku: "ADW3", name: "Acetic Acid Water", spec: "3ml*10vials", price: 20 },
+      { sku: "ADW10", name: "Acetic Acid Water", spec: "10ml*10vials", price: 22 },
+      { sku: "SM05", name: "Sermorelin", spec: "5mg*10vials", price: 70 },
+      { sku: "SM010", name: "Sermorelin", spec: "10mg*10vials", price: 142 },
+      { sku: "TSM5", name: "Tesamorelin", spec: "5mg*10vials", price: 112 },
+      { sku: "TSM10", name: "Tesamorelin", spec: "10mg*10vials", price: 220 },
+      { sku: "CS10", name: "Cagri 5mg + Sema 5mg", spec: "10mg*10vials", price: 167 },
+      { sku: "IG01", name: "IGF-1 LR3", spec: "0.1mg*10vials", price: 45 },
+      { sku: "IG1", name: "IGF-1 LR3", spec: "1mg*10vials", price: 220 },
+      { sku: "10AM", name: "5-Amino-1MQ", spec: "10mg*10vials", price: 158 },
+      { sku: "LB", name: "Lemon Bottle", spec: "10ml*10vials", price: 89 },
+      { sku: "LC600", name: "L-Carnitine 600mg", spec: "10ml*10vials", price: 40 },
+      { sku: "LC1200", name: "L-Carnitine 1200mg", spec: "10ml*10vials", price: 50 },
+      { sku: "ET10", name: "Epitalon", spec: "10mg*10vials", price: 35 },
+      { sku: "ET50", name: "Epitalon", spec: "50mg*10vials", price: 162 },
+      { sku: "G75", name: "HMG", spec: "75iu*10vials", price: 62 },
+      { sku: "MDT10", name: "Mazdutide", spec: "10mg*10vials", price: 195 },
+      { sku: "SUR10", name: "Survodutide", spec: "10mg*10vials", price: 296 },
+      { sku: "IP5", name: "Ipamorelin", spec: "5mg*10vials", price: 38 },
+      { sku: "IP10", name: "Ipamorelin", spec: "10mg*10vials", price: 72 },
+      { sku: "AP5", name: "Adipotide", spec: "5mg*10vials", price: 140 },
+      { sku: "XA5", name: "Semax", spec: "5mg*10vials", price: 44 },
+      { sku: "XA10", name: "Semax", spec: "10mg*10vials", price: 72 },
+      { sku: "RA10", name: "ARA-290", spec: "10mg*10vials", price: 72 },
+      { sku: "DS5", name: "DSIP", spec: "5mg*10vials", price: 40 },
+      { sku: "HX5", name: "Hexarelin Acetate", spec: "5mg*10vials", price: 87 },
+      { sku: "KS5", name: "Kisspeptin-10", spec: "5mg*10vials", price: 60 },
+      { sku: "KS10", name: "Kisspeptin-10", spec: "10mg*10vials", price: 117 },
+      { sku: "OT2", name: "Oxytocin Acetate", spec: "2mg*10vials", price: 36 },
+      { sku: "OT5", name: "Oxytocin Acetate", spec: "5mg*10vials", price: 62 },
+      { sku: "SK5", name: "Selank", spec: "5mg*10vials", price: 45 },
+      { sku: "SK10", name: "Selank", spec: "10mg*10vials", price: 72 },
+      { sku: "TA5", name: "Thymosin Alpha-1", spec: "5mg*10vials", price: 100 },
+      { sku: "TA10", name: "Thymosin Alpha-1", spec: "10mg*10vials", price: 168 },
+      { sku: "TY10", name: "Thymalin", spec: "10mg*10vials", price: 63 },
+      { sku: "AR50", name: "ALCAR", spec: "50mg*10vials", price: 60 },
+      { sku: "G25", name: "GHRP-2 Acetate", spec: "5mg*10vials", price: 27 },
+      { sku: "G210", name: "GHRP-2 Acetate", spec: "10mg*10vials", price: 54 },
+      { sku: "G65", name: "GHRP-6 Acetate", spec: "5mg*10vials", price: 27 },
+      { sku: "G610", name: "GHRP-6 Acetate", spec: "10mg*10vials", price: 54 },
+      { sku: "DR5", name: "Dermorphin", spec: "5mg*10vials", price: 36 },
+      { sku: "GTT600", name: "Glutathione", spec: "600mg*10vials", price: 59 },
+      { sku: "GTT", name: "Glutathione", spec: "1500mg*10vials", price: 158 },
+      { sku: "NP810", name: "Snap-8", spec: "10mg*10vials", price: 41 },
+      { sku: "375", name: "LL-37", spec: "5mg*10vials", price: 90 },
+      { sku: "VP10", name: "VIP", spec: "10mg*10vials", price: 178 },
+      { sku: "F410", name: "FOXO4", spec: "10mg*10vials", price: 360 }
+    ];
+
+    // ============================================================
+    // Rendering Logic
+    // ============================================================
+    const container = document.getElementById('productContainer');
+    const searchInput = document.getElementById('searchInput');
+    const noResults = document.getElementById('noResults');
+
+    const DISCOUNT = 0.55;
+
+    function renderProducts(filterText = '') {
+      const lowerFilter = filterText.toLowerCase().trim();
+      let hasVisible = false;
+      let html = '';
+
+      products.forEach(p => {
+        const match = 
+          p.sku.toLowerCase().includes(lowerFilter) ||
+          p.name.toLowerCase().includes(lowerFilter) ||
+          p.spec.toLowerCase().includes(lowerFilter);
         
-        function redirectToWhatsApp() {
-            window.location.href = WHATSAPP_URL;
+        if (match) {
+          hasVisible = true;
+          const discounted = (p.price * DISCOUNT).toFixed(2);
+          html += `
+            <div class="product-card">
+              <div class="product-info">
+                <div class="product-sku">${p.sku}</div>
+                <div class="product-name">${p.name}</div>
+                <div class="product-spec">${p.spec}</div>
+              </div>
+              <div class="product-price">
+                <div class="amount">$${discounted}</div>
+              </div>
+            </div>
+          `;
         }
-        
-        function showMessage(text, type = 'info') {
-            const msg = document.getElementById('statusMessage');
-            msg.textContent = text;
-            msg.className = `status-message show ${type}`;
-            
-            setTimeout(() => {
-                msg.className = 'status-message';
-            }, 3000);
-        }
-        
-        // Countdown timer
-        let seconds = 5;
-        const countdownElement = document.getElementById('countdown');
-        let timer = null;
-        
-        function startCountdown() {
-            timer = setInterval(() => {
-                seconds--;
-                countdownElement.textContent = seconds;
-                
-                if (seconds <= 0) {
-                    clearInterval(timer);
-                    redirectToWhatsApp();
-                }
-            }, 1000);
-        }
-        
-        function stopCountdown() {
-            if (timer) {
-                clearInterval(timer);
-                timer = null;
-            }
-        }
-        
-        // Main button click
-        document.getElementById('whatsappBtn').addEventListener('click', function() {
-            stopCountdown();
-            redirectToWhatsApp();
-        });
-        
-        // Skip link click
-        document.getElementById('skipLink').addEventListener('click', function(e) {
-            e.preventDefault();
-            stopCountdown();
-            redirectToWhatsApp();
-        });
-        
-        // Detect WeChat/QQ built-in browsers
-        function isWechatBrowser() {
-            return /MicroMessenger/i.test(navigator.userAgent);
-        }
-        
-        function isQQBrowser() {
-            return /QQ/i.test(navigator.userAgent);
-        }
-        
-        // If in WeChat/QQ browser, give warning
-        if (isWechatBrowser() || isQQBrowser()) {
-            showMessage('⚠️ Please tap "..." and select "Open in Browser"', 'warning');
-            seconds = 10;
-            countdownElement.textContent = seconds;
-        }
-        
-        // Check if on mobile device
-        function isMobileDevice() {
-            return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-        }
-        
-        // If desktop, show helpful message
-        if (!isMobileDevice()) {
-            showMessage('💡 WhatsApp Web will open in a new tab', 'info');
-        }
-        
-        // Start countdown when page loads
-        startCountdown();
-    </script>
+      });
+
+      container.innerHTML = html;
+      noResults.style.display = hasVisible ? 'none' : 'block';
+    }
+
+    // ============================================================
+    // Initial Render & Search
+    // ============================================================
+    renderProducts();
+
+    searchInput.addEventListener('input', function() {
+      renderProducts(this.value);
+    });
+  </script>
 </body>
 </html>
