@@ -1,17 +1,12 @@
 export default {
   async fetch(request) {
-    // 👇 填写你的 WhatsApp 客服号码（只填数字，不含 + 号）
     const numbers = [
       "886982200282",
       "886912345678",
       "886987654321"
     ];
-
-    // 随机选一个
     const selected = numbers[Math.floor(Math.random() * numbers.length)];
     const url = "https://wa.me/" + selected;
-
-    // 302 重定向（极速跳转，没有任何中间页）
     return Response.redirect(url, 302);
   }
 };
