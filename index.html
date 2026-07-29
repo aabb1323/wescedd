@@ -193,13 +193,6 @@
     .section-title span { color: #1a7a3a; }
     .section-desc { text-align: center; color: #64748b; margin-bottom: 18px; font-size: 14px; max-width: 500px; margin-left: auto; margin-right: auto; }
 
-    .shipping-banner {
-      background: #f0fdf4; border: 1px solid #1a7a3a; border-radius: 40px;
-      padding: 6px 18px; text-align: center; font-size: 13px; font-weight: 600;
-      color: #1a7a3a; margin-bottom: 16px; display: inline-block;
-    }
-    .shipping-banner i { margin-right: 6px; }
-
     .table-wrapper {
       background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; overflow: hidden; overflow-x: auto; margin-top: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.02);
@@ -418,9 +411,6 @@
   <!-- ===== 完整目录表 (批发价格) ===== -->
   <section class="section" style="padding-top:0;" id="catalog">
     <div class="container">
-      <div style="text-align:center;">
-        <div class="shipping-banner" id="shippingBanner"><i class="fas fa-truck"></i> <span id="shippingText">📦 Frete grátis acima de €200 · Estoque no Brasil</span></div>
-      </div>
       <h2 class="section-title" id="catalogTitle">📋 <span>Lista de Preços · Atacado</span></h2>
       <p class="section-desc" id="catalogDesc">Todos os peptídeos · Preços em EUR (€) por caixa (10 vials) · Distribuidor local</p>
       <div class="table-wrapper">
@@ -694,7 +684,6 @@
         contactTg: 'Telegram',
         contactCta: 'Request Quote',
         responseText: 'Reply within 30 min',
-        shippingText: '📦 Free shipping over €200 · Stock in Brazil',
         catalogTitle: '📋 <span>Wholesale Price List</span>',
         catalogDesc: 'All peptides · Prices in EUR (€) per box (10 vials) · Local distributor',
         timeText: '⏳ Wholesale pricing · Contact us',
@@ -742,7 +731,6 @@
         contactTg: 'Telegram',
         contactCta: 'Solicitar Orçamento',
         responseText: 'Respondemos em até 30 min',
-        shippingText: '📦 Frete grátis acima de €200 · Estoque no Brasil',
         catalogTitle: '📋 <span>Lista de Preços · Atacado</span>',
         catalogDesc: 'Todos os peptídeos · Preços em EUR (€) por caixa (10 vials) · Distribuidor local',
         timeText: '⏳ Preços por atacado · Fale conosco',
@@ -793,7 +781,6 @@
       document.getElementById('contactTg').textContent = t.contactTg;
       document.getElementById('contactCta').textContent = t.contactCta;
       document.getElementById('responseText').textContent = t.responseText;
-      document.getElementById('shippingText').textContent = t.shippingText;
       document.getElementById('catalogTitle').innerHTML = t.catalogTitle;
       document.getElementById('catalogDesc').textContent = t.catalogDesc;
       document.getElementById('timeText').textContent = t.timeText;
