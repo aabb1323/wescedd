@@ -5,33 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
   <title>Yuanhang Peptide · Distribuidor Local no Brasil</title>
 
-  <!-- ===== 语言检测 ===== -->
-  <script>
-  (function() {
-    const lang = navigator.language || navigator.userLanguage;
-    const langMap = {
-      'it': 'it',
-      'pt': 'pt',
-      'de': 'de',
-      'fr': 'fr',
-      'nl': 'nl',
-      'pl': 'pl',
-      'es': 'es'
-    };
-    const baseLang = lang.split('-')[0];
-    window.CURRENT_LANG = langMap[baseLang] || 'en';
-    document.documentElement.setAttribute('data-lang', window.CURRENT_LANG);
-  })();
-  </script>
-
-  <!-- ===== 国家分流链接选择 ===== -->
+  <!-- ===== 巴西分流链接 ===== -->
   <script>
   function getCountrySpecificLink() {
-    const lang = navigator.language || navigator.userLanguage;
-    if (lang.startsWith('pt')) {
-      return 'https://en.gannamaldossari.workers.dev';
-    }
-    return 'https://wb.gannamaldossari.workers.dev';
+    return 'https://en.gannamaldossari.workers.dev';
   }
   window.WHATSAPP_LINK = getCountrySpecificLink();
   </script>
@@ -215,7 +192,6 @@
       border-bottom: 1px solid #ccd8e6;
     }
 
-    /* 本地经销商 + 合作模式 亮点条 */
     .local-dealer-badge {
       background: #1a7a3a; color: #fff; border-radius: 40px;
       padding: 6px 18px; font-weight: 700; font-size: 13px;
@@ -330,89 +306,87 @@
   <nav class="nav">
     <div class="container">
       <div class="logo">Yuanhang<span>Peptide</span> <small>· Distribuidor BR</small></div>
-      <a href="javascript:void(0)" class="nav-cta" onclick="handleLeadClick('', 'Nav CTA')"><i class="fas fa-paper-plane"></i> <span id="navCtaText">Contate-nos</span></a>
+      <a href="javascript:void(0)" class="nav-cta" onclick="handleLeadClick('', 'Nav CTA')"><i class="fas fa-paper-plane"></i> Contate-nos</a>
     </div>
   </nav>
 
   <section class="hero">
     <div class="container">
-      <!-- 巴西本地经销商标识 -->
       <div class="local-dealer-badge"><i class="fas fa-flag"></i> Distribuidor local no Brasil</div>
-      <div class="hero-badge" id="heroBadge">🇧🇷 Lista de Preços · Atacado</div>
-      <h1 id="heroTitle">Peptídeos de Alta Pureza<br><span class="highlight">｜ Preços por Atacado</span></h1>
-      <div class="hook-banner" id="hookBanner"><i class="fas fa-gift"></i> <span id="hookText">🎁 10% off no primeiro pedido · Fale conosco!</span></div>
-      <div class="hero-desc" id="heroDesc">
-        <p><strong id="descP1">Fornecemos produtos peptídicos de alta pureza para uso individual e colaboração com equipes.</strong></p>
-        <p id="descP2">Somos um <strong>distribuidor local no Brasil</strong>, com estoque pronto para entrega rápida e suporte em português.</p>
-        <p><strong id="descP3">Vantagens da colaboração:</strong></p>
+      <div class="hero-badge">🇧🇷 Lista de Preços · Atacado</div>
+      <h1>Peptídeos de Alta Pureza<br><span class="highlight">｜ Preços por Atacado</span></h1>
+      <div class="hook-banner"><i class="fas fa-gift"></i> 🎁 10% off no primeiro pedido · Fale conosco!</div>
+      <div class="hero-desc">
+        <p><strong>Fornecemos produtos peptídicos de alta pureza para uso individual e colaboração com equipes.</strong></p>
+        <p>Somos um <strong>distribuidor local no Brasil</strong>, com estoque pronto para entrega rápida e suporte em português.</p>
+        <p><strong>Vantagens da colaboração:</strong></p>
         <ul>
-          <li id="descLi1">Produtos de alta pureza com qualidade estável</li>
-          <li id="descLi2">Suporte para compras individuais e cooperação em grande escala</li>
-          <li id="descLi3">Preços competitivos para revendedores com margens atrativas</li>
-          <li id="descLi4">Suporte completo pré e pós-venda</li>
-          <li id="descLi5">Fornecimento estável de longo prazo com modelos flexíveis</li>
+          <li>Produtos de alta pureza com qualidade estável</li>
+          <li>Suporte para compras individuais e cooperação em grande escala</li>
+          <li>Preços competitivos para revendedores com margens atrativas</li>
+          <li>Suporte completo pré e pós-venda</li>
+          <li>Fornecimento estável de longo prazo com modelos flexíveis</li>
         </ul>
-        <p id="descP4" style="margin-top:6px;font-weight:600;color:#0f172a;">Seja você um usuário individual, equipe, estúdio ou distribuidor — todos são bem-vindos para crescer juntos.</p>
+        <p style="margin-top:6px;font-weight:600;color:#0f172a;">Seja você um usuário individual, equipe, estúdio ou distribuidor — todos são bem-vindos para crescer juntos.</p>
       </div>
 
-      <!-- 合作模式：一件购买 + 代理批发 -->
       <div class="mode-grid">
         <div class="mode-card">
           <div class="icon"><i class="fas fa-shopping-bag"></i></div>
-          <div class="title" id="mode1Title">🛒 Compra Individual</div>
-          <div class="desc" id="mode1Desc">Compre 1 caixa ou mais · Preços competitivos · Entrega rápida no Brasil</div>
+          <div class="title">🛒 Compra Individual</div>
+          <div class="desc">Compre 1 caixa ou mais · Preços competitivos · Entrega rápida no Brasil</div>
         </div>
         <div class="mode-card">
           <div class="icon"><i class="fas fa-handshake"></i></div>
-          <div class="title" id="mode2Title">🤝 Atacado & Distribuição</div>
-          <div class="desc" id="mode2Desc">Seja um revendedor · Preços especiais · Suporte dedicado para parceiros</div>
+          <div class="title">🤝 Atacado & Distribuição</div>
+          <div class="desc">Seja um revendedor · Preços especiais · Suporte dedicado para parceiros</div>
         </div>
       </div>
 
       <div class="hero-buttons">
-        <a href="javascript:void(0)" class="btn-primary" id="heroCta" onclick="handleLeadClick('', 'Hero CTA')"><i class="fab fa-whatsapp"></i> <span id="heroCtaText">Fale Conosco</span></a>
-        <a href="#catalog" class="btn-outline"><i class="fas fa-arrow-down"></i> <span id="heroCta2">Ver Catálogo</span></a>
+        <a href="javascript:void(0)" class="btn-primary" onclick="handleLeadClick('', 'Hero CTA')"><i class="fab fa-whatsapp"></i> Fale Conosco</a>
+        <a href="#catalog" class="btn-outline"><i class="fas fa-arrow-down"></i> Ver Catálogo</a>
       </div>
       <div class="hero-stats">
-        <div><strong><span>80+</span></strong><small id="stat1">Produtos</small></div>
-        <div><strong><span>99%</span></strong><small id="stat2">Pureza</small></div>
-        <div><strong><span>🇧🇷</span></strong><small id="stat3">Local</small></div>
+        <div><strong><span>80+</span></strong><small>Produtos</small></div>
+        <div><strong><span>99%</span></strong><small>Pureza</small></div>
+        <div><strong><span>🇧🇷</span></strong><small>Local</small></div>
       </div>
     </div>
   </section>
 
   <div class="trust-bar">
     <div class="container">
-      <span class="trust-item" id="trust1"><i class="fas fa-check-circle"></i> Pureza 99%</span>
-      <span class="trust-item" id="trust2"><i class="fas fa-shipping-fast"></i> Entrega 24-48h</span>
-      <span class="trust-item" id="trust3"><i class="fas fa-lock"></i> Pagamento Seguro</span>
-      <span class="trust-item" id="trust4"><i class="fas fa-headset"></i> Suporte em PT</span>
+      <span class="trust-item"><i class="fas fa-check-circle"></i> Pureza 99%</span>
+      <span class="trust-item"><i class="fas fa-shipping-fast"></i> Entrega 24-48h</span>
+      <span class="trust-item"><i class="fas fa-lock"></i> Pagamento Seguro</span>
+      <span class="trust-item"><i class="fas fa-headset"></i> Suporte em PT</span>
     </div>
   </div>
 
   <div class="container">
     <div class="contact-bar">
-      <span class="label"><i class="fas fa-headset"></i> <span id="contactLabel">📞 Fale Conosco</span></span>
+      <span class="label"><i class="fas fa-headset"></i> 📞 Fale Conosco</span>
       <div class="links">
         <a href="javascript:void(0)" class="wa" onclick="handleLeadClick('', 'WhatsApp')">
-          <i class="fab fa-whatsapp"></i> <span id="contactWa">WhatsApp</span>
+          <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
         <a href="https://t.me/adasda156" class="tg" target="_blank">
-          <i class="fab fa-telegram"></i> <span id="contactTg">Telegram</span>
+          <i class="fab fa-telegram"></i> Telegram
         </a>
         <a href="javascript:void(0)" class="cta-btn" onclick="handleLeadClick('', 'Contact Bar')">
-          <i class="fas fa-paper-plane"></i> <span id="contactCta">Solicitar Orçamento</span>
+          <i class="fas fa-paper-plane"></i> Solicitar Orçamento
         </a>
       </div>
-      <span class="response-time" id="responseTime"><i class="fas fa-clock"></i> 💬 <span id="responseText">Respondemos em até 30 min</span></span>
+      <span class="response-time"><i class="fas fa-clock"></i> 💬 Respondemos em até 30 min</span>
     </div>
   </div>
 
   <!-- ===== 完整目录表 (批发价格) ===== -->
   <section class="section" style="padding-top:0;" id="catalog">
     <div class="container">
-      <h2 class="section-title" id="catalogTitle">📋 <span>Lista de Preços · Atacado</span></h2>
-      <p class="section-desc" id="catalogDesc">Todos os peptídeos · Preços em EUR (€) por caixa (10 vials) · Distribuidor local</p>
+      <h2 class="section-title">📋 <span>Lista de Preços · Atacado</span></h2>
+      <p class="section-desc">Todos os peptídeos · Preços em EUR (€) por caixa (10 vials) · Distribuidor local</p>
       <div class="table-wrapper">
         <table>
           <thead>
@@ -562,26 +536,26 @@
   <section class="section" style="padding-top:0;">
     <div class="container">
       <div class="cta-banner">
-        <div class="time-limited" id="timeLimited"><i class="fas fa-clock"></i> <span id="timeText">⏳ Preços por atacado · Fale conosco</span></div>
-        <h3 id="ctaTitle">📦 Precisa de preços por atacado ou compra individual?</h3>
-        <p id="ctaDesc">Somos distribuidor local no Brasil · Estoque pronto · Suporte em português</p>
-        <a href="javascript:void(0)" class="btn-white" id="ctaBtn" onclick="handleLeadClick('', 'CTA Bottom')"><i class="fab fa-whatsapp"></i> <span id="ctaBtnText">Fale conosco no WhatsApp</span></a>
+        <div class="time-limited"><i class="fas fa-clock"></i> ⏳ Preços por atacado · Fale conosco</div>
+        <h3>📦 Precisa de preços por atacado ou compra individual?</h3>
+        <p>Somos distribuidor local no Brasil · Estoque pronto · Suporte em português</p>
+        <a href="javascript:void(0)" class="btn-white" onclick="handleLeadClick('', 'CTA Bottom')"><i class="fab fa-whatsapp"></i> Fale conosco no WhatsApp</a>
       </div>
     </div>
   </section>
 
   <section class="footer-contact">
     <div class="container">
-      <span class="label"><i class="fas fa-headset"></i> <span id="footerLabel">📞 Fale Conosco</span></span>
+      <span class="label"><i class="fas fa-headset"></i> 📞 Fale Conosco</span>
       <div class="links">
         <a href="javascript:void(0)" class="wa" onclick="handleLeadClick('', 'Footer WhatsApp')">
-          <i class="fab fa-whatsapp"></i> <span id="footerWa">WhatsApp</span>
+          <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
         <a href="https://t.me/adasda156" class="tg" target="_blank">
-          <i class="fab fa-telegram"></i> <span id="footerTg">Telegram</span>
+          <i class="fab fa-telegram"></i> Telegram
         </a>
         <a href="javascript:void(0)" class="cta" onclick="handleLeadClick('', 'Footer CTA')">
-          <i class="fas fa-paper-plane"></i> <span id="footerCta">Solicitar Orçamento</span>
+          <i class="fas fa-paper-plane"></i> Solicitar Orçamento
         </a>
       </div>
     </div>
@@ -589,26 +563,21 @@
 
   <footer class="footer">
     <div class="container">
-      <p id="footerText">© 2026 Yuanhang Peptide · Distribuidor Local no Brasil</p>
+      <p>© 2026 Yuanhang Peptide · Distribuidor Local no Brasil</p>
       <div style="margin-top:4px;">
-        <a href="/" id="footerHome">Início</a>
-        <a href="/privacy.html" id="footerPrivacy">Privacidade</a>
-        <a href="mailto:service@wescedd.xyz" id="footerContact">Contato</a>
+        <a href="/">Início</a>
+        <a href="/privacy.html">Privacidade</a>
+        <a href="mailto:service@wescedd.xyz">Contato</a>
       </div>
     </div>
   </footer>
 
   <script>
     // ============================================================
-    // 核心函数：根据国家选择分流链接
+    // 巴西分流链接（固定）
     // ============================================================
     function getCountrySpecificLink() {
-      let link = 'https://wb.gannamaldossari.workers.dev';
-      const lang = navigator.language || navigator.userLanguage;
-      if (lang.startsWith('pt')) {
-        link = 'https://en.gannamaldossari.workers.dev';
-      }
-      return link;
+      return 'https://en.gannamaldossari.workers.dev';
     }
 
     // ============================================================
@@ -647,160 +616,6 @@
       
       setTimeout(function() { window.open(finalUrl, '_blank'); }, 250);
     }
-
-    // ============================================================
-    // 多语言翻译 (保留葡萄牙语为主，英语为后备)
-    // ============================================================
-    const translations = {
-      'en': {
-        navCta: 'Contact Us',
-        heroBadge: '🇧🇷 Wholesale Price List',
-        heroTitle: 'High-Purity Peptides<br><span class="highlight">｜ Wholesale Prices</span>',
-        hookText: '🎁 10% off first order · Contact us now!',
-        descP1: 'Providing high-purity peptide products for individual use and team collaboration.',
-        descP2: 'We are a local distributor in Brazil, with stock ready for fast delivery and Portuguese support.',
-        descP3: 'Cooperation advantages:',
-        descLi1: 'High-purity products with stable quality',
-        descLi2: 'Support for individual purchases and bulk cooperation',
-        descLi3: 'Competitive dealer pricing with attractive margins',
-        descLi4: 'Comprehensive pre-sales and after-sales support',
-        descLi5: 'Long-term stable supply with flexible models',
-        descP4: 'Whether you are an individual user, team, studio, or distributor — all are welcome to grow together.',
-        mode1Title: '🛒 Individual Purchase',
-        mode1Desc: 'Buy 1 box or more · Competitive prices · Fast delivery in Brazil',
-        mode2Title: '🤝 Wholesale & Distribution',
-        mode2Desc: 'Become a reseller · Special prices · Dedicated partner support',
-        heroCta: 'Contact Us',
-        heroCta2: 'View Catalog',
-        stat1: 'Products',
-        stat2: 'Purity',
-        stat3: 'Local',
-        trust1: 'Purity 99%',
-        trust2: 'Delivery 24-48h',
-        trust3: 'Secure Payment',
-        trust4: 'PT Support',
-        contactLabel: '📞 Contact Us',
-        contactWa: 'WhatsApp',
-        contactTg: 'Telegram',
-        contactCta: 'Request Quote',
-        responseText: 'Reply within 30 min',
-        catalogTitle: '📋 <span>Wholesale Price List</span>',
-        catalogDesc: 'All peptides · Prices in EUR (€) per box (10 vials) · Local distributor',
-        timeText: '⏳ Wholesale pricing · Contact us',
-        ctaTitle: '📦 Need wholesale or individual purchase?',
-        ctaDesc: 'We are a local distributor in Brazil · Stock ready · Portuguese support',
-        ctaBtn: 'Contact us on WhatsApp',
-        footerLabel: '📞 Contact us',
-        footerWa: 'WhatsApp',
-        footerTg: 'Telegram',
-        footerCta: 'Request Quote',
-        footerText: '© 2026 Yuanhang Peptide · Local Distributor in Brazil',
-        footerHome: 'Home',
-        footerPrivacy: 'Privacy',
-        footerContact: 'Contact'
-      },
-      'pt': {
-        navCta: 'Contate-nos',
-        heroBadge: '🇧🇷 Lista de Preços · Atacado',
-        heroTitle: 'Peptídeos de Alta Pureza<br><span class="highlight">｜ Preços por Atacado</span>',
-        hookText: '🎁 10% off no primeiro pedido · Fale conosco!',
-        descP1: 'Fornecemos produtos peptídicos de alta pureza para uso individual e colaboração com equipes.',
-        descP2: 'Somos um <strong>distribuidor local no Brasil</strong>, com estoque pronto para entrega rápida e suporte em português.',
-        descP3: 'Vantagens da colaboração:',
-        descLi1: 'Produtos de alta pureza com qualidade estável',
-        descLi2: 'Suporte para compras individuais e cooperação em grande escala',
-        descLi3: 'Preços competitivos para revendedores com margens atrativas',
-        descLi4: 'Suporte completo pré e pós-venda',
-        descLi5: 'Fornecimento estável de longo prazo com modelos flexíveis',
-        descP4: 'Seja você um usuário individual, equipe, estúdio ou distribuidor — todos são bem-vindos para crescer juntos.',
-        mode1Title: '🛒 Compra Individual',
-        mode1Desc: 'Compre 1 caixa ou mais · Preços competitivos · Entrega rápida no Brasil',
-        mode2Title: '🤝 Atacado & Distribuição',
-        mode2Desc: 'Seja um revendedor · Preços especiais · Suporte dedicado para parceiros',
-        heroCta: 'Fale Conosco',
-        heroCta2: 'Ver Catálogo',
-        stat1: 'Produtos',
-        stat2: 'Pureza',
-        stat3: 'Local',
-        trust1: 'Pureza 99%',
-        trust2: 'Entrega 24-48h',
-        trust3: 'Pagamento Seguro',
-        trust4: 'Suporte em PT',
-        contactLabel: '📞 Fale Conosco',
-        contactWa: 'WhatsApp',
-        contactTg: 'Telegram',
-        contactCta: 'Solicitar Orçamento',
-        responseText: 'Respondemos em até 30 min',
-        catalogTitle: '📋 <span>Lista de Preços · Atacado</span>',
-        catalogDesc: 'Todos os peptídeos · Preços em EUR (€) por caixa (10 vials) · Distribuidor local',
-        timeText: '⏳ Preços por atacado · Fale conosco',
-        ctaTitle: '📦 Precisa de preços por atacado ou compra individual?',
-        ctaDesc: 'Somos distribuidor local no Brasil · Estoque pronto · Suporte em português',
-        ctaBtn: 'Fale conosco no WhatsApp',
-        footerLabel: '📞 Fale Conosco',
-        footerWa: 'WhatsApp',
-        footerTg: 'Telegram',
-        footerCta: 'Solicitar Orçamento',
-        footerText: '© 2026 Yuanhang Peptide · Distribuidor Local no Brasil',
-        footerHome: 'Início',
-        footerPrivacy: 'Privacidade',
-        footerContact: 'Contato'
-      }
-    };
-
-    function switchLanguage(lang) {
-      const t = translations[lang] || translations['pt'];
-      document.getElementById('navCtaText').textContent = t.navCta;
-      document.getElementById('heroBadge').textContent = t.heroBadge;
-      document.getElementById('heroTitle').innerHTML = t.heroTitle;
-      document.getElementById('hookText').textContent = t.hookText;
-      document.getElementById('descP1').textContent = t.descP1;
-      document.getElementById('descP2').innerHTML = t.descP2;
-      document.getElementById('descP3').textContent = t.descP3;
-      document.getElementById('descLi1').textContent = t.descLi1;
-      document.getElementById('descLi2').textContent = t.descLi2;
-      document.getElementById('descLi3').textContent = t.descLi3;
-      document.getElementById('descLi4').textContent = t.descLi4;
-      document.getElementById('descLi5').textContent = t.descLi5;
-      document.getElementById('descP4').textContent = t.descP4;
-      document.getElementById('mode1Title').textContent = t.mode1Title;
-      document.getElementById('mode1Desc').textContent = t.mode1Desc;
-      document.getElementById('mode2Title').textContent = t.mode2Title;
-      document.getElementById('mode2Desc').textContent = t.mode2Desc;
-      document.getElementById('heroCtaText').textContent = t.heroCta;
-      document.getElementById('heroCta2').textContent = t.heroCta2;
-      document.getElementById('stat1').textContent = t.stat1;
-      document.getElementById('stat2').textContent = t.stat2;
-      document.getElementById('stat3').textContent = t.stat3;
-      document.getElementById('trust1').innerHTML = '<i class="fas fa-check-circle"></i> ' + t.trust1;
-      document.getElementById('trust2').innerHTML = '<i class="fas fa-shipping-fast"></i> ' + t.trust2;
-      document.getElementById('trust3').innerHTML = '<i class="fas fa-lock"></i> ' + t.trust3;
-      document.getElementById('trust4').innerHTML = '<i class="fas fa-headset"></i> ' + t.trust4;
-      document.getElementById('contactLabel').textContent = t.contactLabel;
-      document.getElementById('contactWa').textContent = t.contactWa;
-      document.getElementById('contactTg').textContent = t.contactTg;
-      document.getElementById('contactCta').textContent = t.contactCta;
-      document.getElementById('responseText').textContent = t.responseText;
-      document.getElementById('catalogTitle').innerHTML = t.catalogTitle;
-      document.getElementById('catalogDesc').textContent = t.catalogDesc;
-      document.getElementById('timeText').textContent = t.timeText;
-      document.getElementById('ctaTitle').textContent = t.ctaTitle;
-      document.getElementById('ctaDesc').textContent = t.ctaDesc;
-      document.getElementById('ctaBtnText').textContent = t.ctaBtn;
-      document.getElementById('footerLabel').textContent = t.footerLabel;
-      document.getElementById('footerWa').textContent = t.footerWa;
-      document.getElementById('footerTg').textContent = t.footerTg;
-      document.getElementById('footerCta').textContent = t.footerCta;
-      document.getElementById('footerText').textContent = t.footerText;
-      document.getElementById('footerHome').textContent = t.footerHome;
-      document.getElementById('footerPrivacy').textContent = t.footerPrivacy;
-      document.getElementById('footerContact').textContent = t.footerContact;
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-      const lang = window.CURRENT_LANG || 'pt';
-      switchLanguage(lang);
-    });
   </script>
 </body>
 </html>
